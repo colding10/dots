@@ -1,0 +1,36 @@
+# PROGRAMS
+alias nano="/opt/homebrew/Cellar/nano/7.2/bin/nano"
+alias nv="nvim"
+
+alias m="micro"
+
+alias g="git"
+alias h="history"
+alias j="jobs"
+
+
+alias l="exa -lg"
+alias ll="exa -lag"
+alias la="exa -lagF"
+
+alias cls="clear"
+alias venv="python3 -m venv"
+
+alias fo="fzf --print0 | xargs -0 -o nvim"
+alias nvtemp='function _nvimtemplate() { cp template.cpp "$1.cpp" && nvim "$1.cpp"; }; _nvimtemplate'
+
+# DIRECTORY MANAGEMENT
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ~="cd ~" # `cd` is probably faster to type though
+alias -- -="cd -"
+
+alias ws="cd ~/Workspace"
+alias dl="cd ~/Downloads"
+alias dt="cd ~/Desktop"
+alias c="cd ~/.config"
+alias cpn="cd ~/cp-notebook"
+
+

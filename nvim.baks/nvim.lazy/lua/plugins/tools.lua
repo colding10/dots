@@ -1,0 +1,175 @@
+return {
+	{
+		"akinsho/toggleterm.nvim",
+		config = function()
+			require("toggleterm").setup()
+		end,
+	},
+	{ "sbdchd/neoformat", cmd = { "Neoformat" } },
+	{ "ckipp01/stylua-nvim" },
+	{ "simnalamburt/vim-mundo", cmd = { "MundoToggle", "MundoShow" } },
+	{
+		"gbprod/yanky.nvim",
+	},
+	{
+		"nvim-tree/nvim-tree.lua",
+		requires = { "nvim-tree/nvim-web-devicons" },
+		setup = function()
+			local keymap = vim.keymap
+local nvim_tree = require("nvim-tree")
+
+nvim_tree.setup({
+	auto_reload_on_write = true,
+	disable_netrw = false,
+	hijack_cursor = false,
+	hijack_netrw = true,
+	hijack_unnamed_buffer_when_opening = false,
+	open_on_tab = false,
+	sort_by = "name",
+	update_cwd = false,
+	view = {
+		width = 30,
+		hide_root_folder = false,
+		side = "left",
+		preserve_window_proportions = false,
+		number = false,
+		relativenumber = false,
+		signcolumn = "yes",
+		mappings = {
+			custom_only = false,
+			list = {
+				-- user mappings go here
+			},
+		},
+	},
+	renderer = {
+		indent_markers = {
+			enable = false,
+			icons = {
+				corner = "└ ",
+				edge = "│ ",
+				none = "  ",
+			},
+		},
+		icons = {
+			webdev_colors = true,
+		},
+	},
+	hijack_directories = {
+		enable = true,
+		auto_open = true,
+	},
+	update_focused_file = {
+		enable = false,
+		update_cwd = false,
+		ignore_list = {},
+	},
+	system_open = {
+		cmd = "",
+		args = {},
+	},
+	diagnostics = {
+		enable = false,
+		show_on_dirs = false,
+		icons = {
+			hint = "",
+			info = "",
+			warning = "",
+			error = "",
+		},
+	},
+	filters = {
+		dotfiles = false,
+		custom = {},
+		exclude = {},
+	},
+	git = {
+		enable = true,
+		ignore = true,
+		timeout = 400,
+	},
+	actions = {
+		use_system_clipboard = true,
+		change_dir = {
+			enable = true,
+			global = false,
+			restrict_above_cwd = false,
+		},
+		open_file = {
+			quit_on_open = false,
+			resize_window = false,
+			window_picker = {
+				enable = true,
+				chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
+				exclude = {
+					filetype = { "notify", "packer", "qf", "diff", "fugitive", "fugitiveblame" },
+					buftype = { "nofile", "terminal", "help" },
+				},
+			},
+		},
+	},
+	trash = {
+		cmd = "trash",
+		require_confirm = true,
+	},
+	log = {
+		enable = false,
+		truncate = false,
+		types = {
+			all = false,
+			config = false,
+			copy_paste = false,
+			diagnostics = false,
+			git = false,
+			profile = false,
+		},
+	},
+})
+
+require("nvim-treesitter.configs").setup({
+	highlight = {
+		-- ...
+	},
+	-- ...
+	rainbow = {
+		enable = true,
+		-- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
+		extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
+		max_file_lines = nil, -- Do not enable for files with more than n lines, int
+		-- colors = {}, -- table of hex strings
+		-- termcolors = {} -- table of colour name strings
+	},
+})
+
+keymap.set("n", "<space>s", require("nvim-tree.api").tree.toggle, {
+	silent = true,
+	desc = "toggle nvim-tree",
+})
+
+		end
+
+	},
+	{
+		"folke/which-key.nvim",
+		event = "VimEnter",
+		-- config = function()
+		-- 	vim.defer_fn(function()
+		-- 		require("config.which-key")
+		-- 	end, 2000)
+		-- end,
+	},
+	{ "gelguy/wilder.nvim", opt = true, setup = [[vim.cmd('packadd wilder.nvim')]] },
+	{ "sakhnik/nvim-gdb", run = { "bash install.sh" }, opt = true, setup = [[vim.cmd('packadd nvim-gdb')]] },
+	{
+		"folke/persistence.nvim",
+		event = "BufReadPre", -- this will only start session saving when an actual file was opened
+		module = "persistence",
+		config = function()
+			require("persistence").setup()
+		end,
+	},
+	{ "liuchengxu/vista.vim", cmd = "Vista" },
+	{ "SirVer/ultisnips", event = "InsertEnter" },
+	{ "honza/vim-snippets", after = "ultisnips" },
+	{ "andweeb/presence.nvim" },
+}
