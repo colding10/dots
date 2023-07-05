@@ -1,12 +1,15 @@
+local config = require("config.lualine.config")
+
 local M = {}
 
 local function setup()
     local cpn = require("config.lualine.components")
+    local theme = require("config.lualine.highlights").custom(config.options)
 
     require("lualine").setup({
         options = {
-            theme = "onedark",
-            icons_enabled = false,
+            theme = "palenight", -- theme,
+            icons_enabled = true,
             component_separators = {
                 left = "",
                 right = ""
@@ -28,27 +31,19 @@ local function setup()
             }
         },
         sections = {
-            lualine_a = {"mode"},
-            lualine_b = {{
-                "filename",
-                file_status = true,
-                path = 3
-            }},
-            lualine_c = {{
-                "diagnostics",
-                symbols = require("core.icons").diagnostics
-            }},
-            lualine_x = {cpn.lsp},
+            lualine_a = {cpn.mode},
+            lualine_b = {cpn.filename},
+            lualine_c = {},
+            lualine_x = {cpn.diagnostics, cpn.lsp},
             lualine_y = {cpn.filetype},
-            lualine_z = {cpn.position}
+            lualine_z = {cpn.position, cpn.scrollbar}
         },
         tabline = {},
         extensions = {}
     })
 end
 
-M.setup = function()
-end
+M.setup = config.setup
 
 M.load = function()
     setup()

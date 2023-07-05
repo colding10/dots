@@ -1,9 +1,9 @@
 return {
     diagnostics = {
-        error = " ",
-        warn = " ",
-        hint = " ",
-        info = " "
+        error = "",
+        warn = "",
+        hint = "",
+        info = "",
     },
     git = {
         added = "",
@@ -15,7 +15,7 @@ return {
         unstaged = "U",
         staged = "",
         conflict = "",
-        deleted = ""
+        deleted = "",
     },
     gitsigns = {
         add = "┃",
@@ -23,7 +23,7 @@ return {
         delete = "",
         topdelhfe = "",
         changedelete = "┃",
-        untracked = "┃"
+        untracked = "┃",
     },
     kinds = {
         Array = " ",
@@ -61,7 +61,7 @@ return {
         Unit = " ",
         Value = " ",
         Variable = " ",
-        Macro = "" -- Macro
+        Macro = "", -- Macro
     },
     borders = {
         --- @class BorderIcons
@@ -73,7 +73,7 @@ return {
             top_left = "🭽",
             top_right = "🭾",
             bottom_right = "🭿",
-            bottom_left = "🭼"
+            bottom_left = "🭼",
         },
         ---@type BorderIcons
         empty = {
@@ -84,7 +84,7 @@ return {
             top_left = " ",
             top_right = " ",
             bottom_right = " ",
-            bottom_left = " "
+            bottom_left = " ",
         },
         ---@type BorderIcons
         thick = {
@@ -95,7 +95,7 @@ return {
             top_left = "▄",
             top_right = "▄",
             bottom_right = "▀",
-            bottom_left = "▀"
-        }
-    }
+            bottom_left = "▀",
+        },
+    },
 }
