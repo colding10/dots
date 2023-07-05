@@ -6,10 +6,10 @@ local default = {
   separator = "bubble", -- bubble | triangle
   ---@type any
   colorful = true,
-  separator_icon = { left = "", right = " " },
-  thin_separator_icon = { left = "", right = " " },
-  -- separator_icon = { left = "█", right = "█" },
-  -- thin_separator_icon = { left = " ", right = " " },
+  -- separator_icon = { left = "", right = " " },
+  -- thin_separator_icon = { left = "", right = " " },
+  separator_icon = { left = "█", right = "█" },
+  thin_separator_icon = { left = " ", right = " " },
 }
 
 ---@type LualineConfig

@@ -8,7 +8,7 @@ local function setup()
 
     require("lualine").setup({
         options = {
-            theme = "edge", --theme,
+            theme = "palenight", --theme,
             icons_enabled = true,
             component_separators = { left = "", right = "" },
             section_separators = { left = "", right = "" },
@@ -26,19 +26,11 @@ local function setup()
         },
         sections = {
             lualine_a = { cpn.mode },
-            lualine_b = { cpn.diagnostics },
-            lualine_c = {},
-            lualine_x = { cpn.diff },
-            lualine_y = { cpn.position, cpn.filetype },
-            lualine_z = { cpn.spaces, cpn.branch },
-        },
-        inactive_sections = {
-            lualine_a = {},
-            lualine_b = {},
-            lualine_c = { "filename" },
-            lualine_x = { "location" },
-            lualine_y = {},
-            lualine_z = {},
+            lualine_b = { "hostname" },
+            lualine_c = { "buffers" },
+            lualine_x = { cpn.diagnostics, cpn.lsp },
+            lualine_y = { cpn.filetype},
+            lualine_z = { cpn.position, cpn.scrollbar },
         },
         tabline = {},
         extensions = {},

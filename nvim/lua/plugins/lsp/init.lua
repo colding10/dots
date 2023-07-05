@@ -1,7 +1,7 @@
 return {{
     "neovim/nvim-lspconfig",
     event = "BufReadPre",
-    dependencies = {"hrsh7th/cmp-nvim-lsp", "williamboman/mason-lspconfig.nvim"},
+    dependencies = {"hrsh7th/cmp-nvim-lsp", "williamboman/mason-lspconfig.nvim", {'nvim-lua/lsp-status.nvim', lazy = false}},
     config = function(_, _)
         local utils = require("util")
         local mason_lspconfig = require("mason-lspconfig")
