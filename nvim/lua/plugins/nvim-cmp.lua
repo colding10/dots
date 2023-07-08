@@ -20,11 +20,7 @@ return {
                 name = "cmdline"
             }})
         })
-        cmp.setup.filetype("java", {
-            completion = {
-                keyword_length = 2
-            }
-        })
+
         return {
             completion = {
                 completeopt = "menu,menuone,noinsert"
@@ -40,6 +36,7 @@ return {
                 ["<C-f>"] = cmp.mapping.scroll_docs(4),
                 ["<C-Space>"] = cmp.mapping.complete(),
                 ["<C-e>"] = cmp.mapping.abort(),
+                ["<ESC>"] = cmp.mapping.abort(),
                 ["<CR>"] = cmp.mapping.confirm({
                     select = true
                 }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
@@ -50,13 +47,12 @@ return {
                     behavior = cmp.SelectBehavior.Insert
                 }),
             }),
-            sources = cmp.config.sources({{
-                name = "nvim_lsp"
-            },{
-                name = "buffer"
-            }, {
-                name = "path"
-            }}),
+
+            sources = cmp.config.sources({
+                {name = "nvim_lsp", keyword_length = 1},
+                {name = "buffer", keyword_length = 3},
+                {name = "path", keyword_length = 3}
+            }),
   
             formatting = {
                 fields = {"abbr", "kind", "menu"},

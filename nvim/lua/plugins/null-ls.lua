@@ -18,14 +18,25 @@ return {
 				formatting.black,
 				formatting.fish_indent,
 				formatting.astyle,
+				formatting.dprint,
+        		formatting.prettier.with({ filetypes = { "markdown" } }),
+				formatting.isort,
 
 				diagnostics.fish,
 				diagnostics.trail_space,
-
-				-- diagnostics.cspell, 
-
-				-- code_actions.cspell,
-				-- code_actions.gitsigns,
+        		diagnostics.markdownlint,
+				diagnostics.flake8,
+        		diagnostics.deno_lint,
+        		diagnostics.selene.with({
+          			condition = function(utils)
+            		return utils.root_has_file({ "selene.toml" })
+          			end,
+        		}),
+				diagnostics.luacheck.with({
+					condition = function(utils)
+					  return utils.root_has_file({ ".luacheckrc" })
+					end,
+				}),
 			},
 		}
 	end,

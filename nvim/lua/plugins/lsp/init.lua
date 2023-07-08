@@ -1,7 +1,7 @@
 return {{
     "neovim/nvim-lspconfig",
     event = "BufReadPre",
-    dependencies = {"hrsh7th/cmp-nvim-lsp", "williamboman/mason-lspconfig.nvim", {'nvim-lua/lsp-status.nvim', lazy = false}},
+    dependencies = {"hrsh7th/cmp-nvim-lsp", "williamboman/mason-lspconfig.nvim"},
     config = function(_, _)
         local utils = require("util")
         local mason_lspconfig = require("mason-lspconfig")
@@ -20,19 +20,7 @@ return {{
                     capabilities = lsp_utils.capabilities
                 })
             end,
-            ["pyright"] = function()
-                lspconfig.pyright.setup({
-                    on_attach = lsp_utils.on_attach,
-                    capabilities = lsp_utils.capabilities,
-                    settings = {
-                        python = {
-                            analysis = {
-                                typeCheckingMode = "off"
-                            }
-                        }
-                    }
-                })
-            end,
+    
             ["clangd"] = function()
                 local capabilities_cpp = lsp_utils.capabilities
                 capabilities_cpp.offsetEncoding = {"uts-16"}

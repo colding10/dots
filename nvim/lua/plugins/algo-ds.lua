@@ -1,4 +1,7 @@
 return {
     dir = "~/cp-notebook/nvim-plugin",
-    event = "BufReadPre"
+    event = "BufReadPre",
+    keys = {
+        {"<leader>ads", ":ADS<CR>"}
+    }
 }

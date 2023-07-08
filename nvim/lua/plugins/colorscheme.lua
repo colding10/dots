@@ -14,4 +14,24 @@ return {
             vim.cmd("colorscheme edge")
         end
     },
+
+    {
+        "olimorris/onedarkpro.nvim",
+        priority = 1000 -- Ensure it loads first
+    },
+
+
+    {
+        "rebelot/kanagawa.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {}
+    },
+
+    {
+        "tanvirtin/monokai.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {}
+    }
 }

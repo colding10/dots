@@ -1,13 +1,5 @@
 return {
     {
-        "<leader><leader>",
-        ":",
-        desc = "Shorter command line",
-
-        opts = {silent=false}
-    },
-
-    {
         "<leader>w",
         ":w",
         desc = "Save file"

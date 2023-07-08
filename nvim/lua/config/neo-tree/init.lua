@@ -6,7 +6,7 @@ local config = {
     sources = { "filesystem", "buffers", "git_status", "diagnostics", "document_symbols",
     },
     source_selector = {
-        winbar = true, -- toggle to show selector on winbar
+        winbar = false, -- toggle to show selector on winbar
         content_layout = "center",
         tabs_layout = "equal",
         show_separator_on_edge = true,

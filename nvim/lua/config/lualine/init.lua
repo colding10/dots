@@ -5,18 +5,15 @@ local function setup()
 
     require("lualine").setup({
         options = {
-            theme = "onedark",
+            theme = require("kanagawa").theme,
             icons_enabled = false,
-            component_separators = {
-                left = "",
-                right = ""
-            },
+            component_separators = '|',
             section_separators = {
-                left = "",
-                right = ""
+                left = '',
+                right = ''
             },
             disabled_filetypes = {
-                statusline = {"dashboard", "lazy", "alpha"}
+                statusline = {"dashboard", "lazy", "alpha", "mason"}
             },
             ignore_focus = {},
             always_divide_middle = true,
@@ -28,7 +25,7 @@ local function setup()
             }
         },
         sections = {
-            lualine_a = {"mode"},
+            lualine_a = {{"mode", separator = { left = '' }, right_padding = 2}},
             lualine_b = {{
                 "filename",
                 file_status = true,
@@ -40,7 +37,7 @@ local function setup()
             }},
             lualine_x = {cpn.lsp},
             lualine_y = {cpn.filetype},
-            lualine_z = {cpn.position}
+            lualine_z = {{cpn.position, separator = { right = '' }, left_padding = 2 }}
         },
         tabline = {},
         extensions = {}
