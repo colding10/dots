@@ -2,9 +2,8 @@ return {
     "hrsh7th/nvim-cmp",
     version = false,
     event = {"InsertEnter", "CmdlineEnter"},
-    dependencies = {"hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-buffer", "hrsh7th/cmp-path",
-                    "hrsh7th/cmp-cmdline"},
-    opts = function()
+    dependencies = {"hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-buffer", "hrsh7th/cmp-path", "hrsh7th/cmp-cmdline"},
+    opts = function(_, opts)
         local cmp = require("cmp")
         cmp.setup.cmdline("/", {
             mapping = cmp.mapping.preset.cmdline(),
@@ -24,6 +23,12 @@ return {
         return {
             completion = {
                 completeopt = "menu,menuone,noinsert"
+            },
+            snippet = {
+                -- REQUIRED - you must specify a snippet engine
+                expand = function(args)
+                    require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+                end
             },
             mapping = cmp.mapping.preset.insert({
                 ["<C-j>"] = cmp.mapping(cmp.mapping.select_next_item({
@@ -45,20 +50,22 @@ return {
                 }),
                 ["<S-Tab>"] = cmp.mapping.select_prev_item({
                     behavior = cmp.SelectBehavior.Insert
-                }),
+                })
             }),
 
-            sources = cmp.config.sources({
-                {name = "nvim_lsp", keyword_length = 1},
-                {name = "buffer", keyword_length = 3},
-                {name = "path", keyword_length = 3}
-            }),
-  
+            sources = cmp.config.sources({{
+                name = "nvim_lsp",
+                keyword_length = 1
+            }, {
+                name = "buffer",
+                keyword_length = 3
+            }}),
+
             formatting = {
                 fields = {"abbr", "kind", "menu"},
                 format = function(entry, item)
                     local icons = require("core.icons").kinds
-					item.menu = item.kind
+                    item.menu = item.kind
                     item.kind = icons[item.kind]
                     return item
                 end

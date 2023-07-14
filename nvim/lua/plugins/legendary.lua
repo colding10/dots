@@ -17,7 +17,7 @@ M.config = function()
 
         keymaps = require("core.keymaps.init"),
         commands = require("core.commands.init"),
-        autocmds = {}
+        autocmds = require("core.autocmds.init")
     })
 end
 

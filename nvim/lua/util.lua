@@ -311,16 +311,7 @@ M.on_very_lazy = function(fn)
     })
 end
 
-M.capabilities = function(ext)
-    return vim.tbl_deep_extend("force", {}, ext or {}, require("cmp_nvim_lsp").default_capabilities(), {
-        textDocument = {
-            foldingRange = {
-                dynamicRegistration = false,
-                lineFoldingOnly = true
-            }
-        }
-    })
-end
+
 
 M.notify = function(msg, level, opts)
     opts = opts or {}

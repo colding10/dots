@@ -17,7 +17,6 @@ vim.opt.sidescrolloff = 5 -- how many lines to scroll when using the scrollbar
 vim.opt.autoindent = true
 vim.opt.signcolumn = "yes"
 
--- vim.opt.completeopt = { "menu", "menuone", "noselect" }
 vim.opt.expandtab = true
 vim.opt.showcmd = true
 vim.opt.swapfile = false

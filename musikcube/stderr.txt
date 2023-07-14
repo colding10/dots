@@ -1,0 +1,4 @@
+[2023-07-09 19:10:24] [info] asio async_connect error: asio.system:61 (Connection refused)
+[2023-07-09 19:10:24] [info] Error getting remote endpoint: asio.system:22 (Invalid argument)
+[2023-07-09 19:10:24] [error] handle_connect error: Connection refused
+[2023-07-09 19:10:50] [error] handle_read_frame error: websocketpp.transport:7 (End of File)

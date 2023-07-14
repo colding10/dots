@@ -1,5 +1,5 @@
 alias sudo='sudo '
-
+alias g++="g++-13"
 alias week='date +%V'
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 

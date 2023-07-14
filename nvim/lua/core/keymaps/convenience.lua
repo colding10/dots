@@ -15,7 +15,7 @@ return {
         "jk",
         "<ESC>",
 
-        mode = {"i"},
+        mode = {"i", "v"},
         desc = "Press jk fast to exit insert"
     },
 }

@@ -1,4 +1,4 @@
 return {
     "907th/vim-auto-save",
-    event = "InsertEnter"
+    event = "InsertEnter",
 }

@@ -4,8 +4,6 @@ return {
     ---@type Flash.Config
     opts = {
         modes = {
-            -- options used when flash is activated through
-            -- a regular search with `/` or `?`
             search = {
                 enabled = true, -- enable flash for search
                 highlight = {

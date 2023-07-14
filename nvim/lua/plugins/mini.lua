@@ -14,5 +14,14 @@ return {
         config = function()
             require("mini.align").setup()
         end
-    }
+    },
+
+    {
+        "echasnovski/mini.files",
+        version = false,
+        event = "BufReadPre",
+        config = function()
+            require("mini.files").setup()
+        end
+    },
 }

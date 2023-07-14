@@ -5,7 +5,7 @@ local function setup()
 
     require("lualine").setup({
         options = {
-            theme = require("kanagawa").theme,
+            theme = require("onedarkpro").theme,
             icons_enabled = false,
             component_separators = '|',
             section_separators = {
