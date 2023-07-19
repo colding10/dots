@@ -51,13 +51,10 @@ M.lsp_kinds = {
     Null = " "
 }
 
-M.mason_packages = {"bash-language-server", "black", "clang-format", "clangd", "codelldb", "cspell", "css-lsp",
-                    "eslint-lsp", "graphql-language-service-cli", "html-lsp", "json-lsp", "lua-language-server",
-                    "markdownlint", "prettier", "pyright", "shfmt", "tailwindcss-language-server", "taplo",
-                    "typescript-language-server", "yaml-language-server", "editorconfig-checker"}
+M.mason_packages = {"black", "clang-format", "clangd", "codelldb", "json-lsp", "lua-language-server", "markdownlint",
+                    "prettier", "pyright"}
 
-M.lsp_servers = {"clangd", "tsserver", "pyright", "lua_ls", "eslint", "bashls", "yamlls", "jsonls", "cssls", "taplo",
-                 "html", "graphql", "tailwindcss",}
+M.lsp_servers = {"clangd", "pyright", "lua_ls"}
 
 function M.on_attach(on_attach)
     vim.api.nvim_create_autocmd("LspAttach", {
@@ -188,8 +185,6 @@ function M.add_pack(name)
     return status
 end
 
-
-
 M.root_patterns = {".git", "lua", "package.json", "mvnw", "gradlew", "pom.xml", "build.gradle", "release", ".project"}
 
 M.augroup = function(name)
@@ -201,8 +196,6 @@ end
 M.has = function(plugin)
     return require("lazy.core.config").plugins[plugin] ~= nil
 end
-
-
 
 M.get_highlight_value = function(group)
     local found, hl = pcall(vim.api.nvim_get_hl_by_name, group, true)
@@ -311,8 +304,6 @@ M.on_very_lazy = function(fn)
     })
 end
 
-
-
 M.notify = function(msg, level, opts)
     opts = opts or {}
     level = vim.log.levels[level:upper()]
@@ -331,6 +322,5 @@ M.notify = function(msg, level, opts)
         vim.notify(msg, level, nopts)
     end)
 end
-
 
 return M

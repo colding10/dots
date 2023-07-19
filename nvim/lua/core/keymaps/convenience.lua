@@ -1,7 +1,7 @@
 return {
     {
         "<leader>w",
-        ":w",
+        ":w<CR>",
         desc = "Save file"
     },
     

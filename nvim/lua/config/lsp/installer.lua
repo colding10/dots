@@ -45,6 +45,20 @@ function M.setup(servers, options)
                 on_attach = lsp_utils.on_attach,
                 capabilities = capabilities_cpp
             })
+        end,
+
+        ["pyright"] = function()
+            lspconfig.pyright.setup({
+                on_attach = lsp_utils.on_attach,
+                capabilities = lsp_utils.capabilities,
+                settings = {
+                    python = {
+                        analysis = {
+                            typeCheckingMode = "off"
+                        }
+                    }
+                }
+            })
         end
     })
 end
