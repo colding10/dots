@@ -3,30 +3,13 @@ export EDITOR='nvim';
 NODE_REPL_HISTORY_FILE=~/.node_history;
 NODE_REPL_HISTORY_SIZE='32768';
 
-export HISTSIZE='32768';
-export HISTFILESIZE="${HISTSIZE}";
-
-export HISTCONTROL='ignoreboth';
-
-export ZSH="$HOME/.oh-my-zsh"
 export LANG='en_US.UTF-8';
 export LC_ALL='en_US.UTF-8';
 
 export LESS_TERMCAP_md="${yellow}";
 export GREP_OPTIONS='--color=auto';
-export MANPAGER='nvim +Man! .'
+export MANPAGER='nvim +Man!'
 export MANWIDTH=999
-
-PATH="/usr/local/opt/binutils/bin:$PATH"
-PATH="/usr/local/sbin:$PATH"
-PATH="/usr/local/opt/curl/bin:$PATH"
-PATH="/opt/homebrew/bin:$PATH"
-PATH="/opt/homebrew/sbin:$PATH"
-PATH="/opt/homebrew/opt/llvm/bin:$PATH"
-PATH="/opt/homebrew/Cellar/openjdk/20.0.1/bin:$PATH"
-PATH="/Users/colin/.cargo/bin:$PATH"
-PATH="/users/colin/.local/bin:$PATH"
-PATH="/opt/homebrew/Cellar/tcl-tk/8.6.13_3/bin/:$PATH"
 
 export PKG_CONFIG_PATH="/opt/homebrew/lib/pkgconfig"
 
@@ -34,6 +17,3 @@ export LDFLAGS="-L/opt/homebrew/opt/llvm/lib/c++ -Wl,-rpath,/opt/homebrew/opt/ll
 export CPPFLAGS="-I/opt/homebrew/opt/llvm/include -I/usr/local/include -I/opt/homebrew/opt/gcc@13/include"
 export CPLUS_INCLUDE_PATH="/usr/local/include"
 export C_INCLUDE_PATH="/usr/local/include"
-
-export LANG=en_US.UTF-8
-export PATH

@@ -3,10 +3,10 @@
 
 # The prompt indicators are environmental variables that represent
 # the state of the prompt
-let-env PROMPT_INDICATOR = {|| "> " }
-let-env PROMPT_INDICATOR_VI_INSERT = {|| ": " }
-let-env PROMPT_INDICATOR_VI_NORMAL = {|| "> " }
-let-env PROMPT_MULTILINE_INDICATOR = {|| "::: " }
+# let-env PROMPT_INDICATOR = {|| "> " }
+# let-env PROMPT_INDICATOR_VI_INSERT = {|| ": " }
+# let-env PROMPT_INDICATOR_VI_NORMAL = {|| "> " }
+# let-env PROMPT_MULTILINE_INDICATOR = {|| "::: " }
 
 let-env FUZZY_FINDER = "fzf"
 let-env PAGER = "less -RF --incsearch --status-line --mouse --wheel-lines 3"
@@ -15,7 +15,11 @@ let-env DELTA_PAGER = "delta"
 let-env BAT_PAGER = $env.PAGER
 
 let-env EDITOR = nvim
-let-env PATH = ($env.PATH | split row (char esep) | prepend '/opt/homebrew/bin')
+let-env PATH = ($env.PATH | split row (char esep) 
+                          | prepend '/opt/homebrew/bin' 
+                          | prepend '/usr/local/bin'
+                          | prepend '/usr/bin')
+                          
 let-env GH_USER = "colding10"
 
 # Specifies how environment variables are:
@@ -38,6 +42,7 @@ let-env ENV_CONVERSIONS = {
 let-env NU_LIB_DIRS = [
     ($nu.default-config-dir | path join 'scripts')
     ("~/.config/nushell"    | path join 'scripts')
+    ("~/.config/nushell"    | path join 'completions')
 ]
 
 # Directories to search for plugin binaries when calling register
@@ -48,8 +53,6 @@ let-env NU_PLUGIN_DIRS = [
 ]
 
 
-
-
 zoxide init nushell | save -f ~/.zoxide.nu
-# oh-my-posh init nu --config ~/.bubbles.omp.json
+
 mkdir ~/.cache/starship; starship init nu | save -f ~/.cache/starship/init.nu

@@ -51,10 +51,10 @@ M.lsp_kinds = {
     Null = " "
 }
 
-M.mason_packages = {"black", "clang-format", "clangd", "codelldb", "json-lsp", "lua-language-server", "markdownlint",
+M.mason_packages = {"bash-language-server", "black", "clang-format", "clangd", "codelldb", "json-lsp", "lua-language-server", "markdownlint",
                     "prettier", "pyright"}
 
-M.lsp_servers = {"clangd", "pyright", "lua_ls"}
+M.lsp_servers = {"clangd", "pyright", "lua_ls", "bashls"}
 
 function M.on_attach(on_attach)
     vim.api.nvim_create_autocmd("LspAttach", {
