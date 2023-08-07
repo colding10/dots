@@ -4,13 +4,12 @@
 # | |__| |_| | |  | |  __/| |___| |___  | |  | | |_| | |\  |
 #  \____\___/|_|  |_|_|   |_____|_____| |_| |___\___/|_| \_|
  #
-
 # +---------+
 # | General |
 # +---------+
 
 # Load more completions
-fpath=($DOTFILES/zsh/plugins/zsh-completions/src $fpath)
+plug "zsh-users/zsh-completions"
 
 # Should be called before compinit
 zmodload zsh/complist
@@ -39,7 +38,7 @@ compdef vman="man"
 # | Options |
 # +---------+
 
-# setopt GLOB_COMPLETE      # Show autocompletion menu with globs
+setopt GLOB_COMPLETE       # Show autocompletion menu with globs
 setopt MENU_COMPLETE        # Automatically highlight first element of completion menu
 setopt AUTO_LIST            # Automatically list choices on ambiguous completion.
 setopt COMPLETE_IN_WORD     # Complete from both ends of a word.
@@ -79,13 +78,14 @@ zstyle ':completion:*:*:*:*:corrections' format '%F{yellow}!- %d (errors: %e) -!
 zstyle ':completion:*:*:*:*:descriptions' format '%F{blue}-- %D %d --%f'
 zstyle ':completion:*:*:*:*:messages' format ' %F{purple} -- %d --%f'
 zstyle ':completion:*:*:*:*:warnings' format ' %F{red}-- no matches found --%f'
-# zstyle ':completion:*:default' list-prompt '%S%M matches%s'
+zstyle ':completion:*:default' list-prompt '%S%M matches%s'
+
 # Colors for files and directory
 zstyle ':completion:*:*:*:*:default' list-colors ${(s.:.)LS_COLORS}
 
 # Only display some tags for the command cd
 zstyle ':completion:*:*:cd:*' tag-order local-directories directory-stack path-directories
-# zstyle ':completion:*:complete:git:argument-1:' tag-order !aliases
+zstyle ':completion:*:complete:git:argument-1:' tag-order !aliases
 
 # Required for completion to be in good groups (named after the tags)
 zstyle ':completion:*' group-name ''
