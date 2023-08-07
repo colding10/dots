@@ -1,6 +1,7 @@
-require("core.options")
-require("core.lazy")
+require("options.opts")
 
-require("core.colorscheme")
-require("core.keymaps")
-require("core.autocmds")
+require("plugins")
+
+require("options.colors")
+require("options.keymaps")
+require("options.autocmds")
