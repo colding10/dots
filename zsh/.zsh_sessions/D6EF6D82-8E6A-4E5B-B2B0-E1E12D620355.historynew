@@ -1,0 +1,6 @@
+: 1692123428:0;ls
+: 1692123431:1;g++ aSYNcrone.c
+: 1692123438:0;g++ aSYNcrone.c -std=c++20
+: 1692123445:0;clang++ aSYNcrone.c -std=c++20
+: 1692123454:0;clang aSYNcrone.c -std=c20
+: 1692123457:0;clang aSYNcrone.c

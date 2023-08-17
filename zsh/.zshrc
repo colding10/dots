@@ -24,6 +24,7 @@ plug "zsh-users/zsh-syntax-highlighting"
 plug "$HOME/.config/zsh/completion.zsh"
 
 eval "$(zoxide init zsh)"
+# eval "$(starship init zsh)"
 
 # keybinds
 bindkey '^ ' autosuggest-accept
